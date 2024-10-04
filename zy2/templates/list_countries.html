@@ -8,7 +8,7 @@
     {{ country.name }}
     <ul>
         {% for state in country.state_set.all %}
-        <li>{{ state.name }}</li>  <!-- Mostrar los estados que pertenecen al país -->
+        <li>{{ state.name }}</li> 
         {% empty %}
         <li>No states for this country yet.</li>
         {% endfor %}

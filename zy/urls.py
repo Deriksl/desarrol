@@ -32,10 +32,10 @@ urlpatterns = [
     path('signout/', views.signout, name='signout'),
     path('task/<int:task_id>/update/', views.updatetasks, name='updatetask'),
     path('task/<int:task_id>/', views.task_detail, name='task_detail'),
-    path('countries/', views.list_countries, name='list_countries'),  # Usar list_countries
+    path('countries/', views.list_countries, name='list_countries'),  
     path('countries/add/', views.add_country, name='add_country'),
     path('countries/<int:pk>/edit/', views.update_country, name='update_country'),
-    path('states/', views.list_states, name='list_states'),  # Usar list_states
+    path('states/', views.list_states, name='list_states'),  
     path('states/add/', views.add_state, name='add_state'),
     path('states/<int:pk>/edit/', views.update_states, name='update_states'),
 ]

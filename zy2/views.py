@@ -175,5 +175,5 @@ def update_states(request, pk):
     form = StateForm(request.POST or None, instance=state)
     if form.is_valid():
         form.save()
-        return redirect('list_states')  # Cambia 'url_name' por la URL a la que quieras redirigir.
+        return redirect('list_states') 
     return render(request, 'update_states.html', {'form': form})
