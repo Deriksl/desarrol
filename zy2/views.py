@@ -133,7 +133,7 @@ def add_country(request):
         form = CountryForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('countries')
+            return redirect('list_countries')
 
 def states(request):
     states = State.objects.all()
@@ -148,7 +148,7 @@ def add_state(request):
         form = StateForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('states')
+            return redirect('list_states')
         
 
 def list_countries(request):
