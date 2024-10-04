@@ -1,0 +1,25 @@
+{% load static %}
+<head>
+</head>
+<body>
+    <h1>Detalles de la Tarea: {{ task.title }}</h1>
+    
+    <p><strong>Descripción:</strong> {{ task.description }}</p>
+    <p><strong>Usuario:</strong> {{ task.user.username }}</p>
+    <p><strong>Fecha de Creación:</strong> {{ task.created|date:"Y-m-d H:i" }}</p>
+    <p><strong>Fecha de Completado:</strong> {{ task.datecompleted|date:"Y-m-d H:i" }}</p>
+    <p><strong>Estado:</strong> {% if task.datecompleted %} Completada {% else %} No completada {% endif %}</p>
+
+    
+    <form action="{% url 'updatetask' task.id %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Actualizar Tarea</button>
+    </form>
+
+    <a href="{% url 'task' %}">Volver a Tareas</a>
+</body>
+</html>
+
+
+

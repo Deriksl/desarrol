@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Tareas</h1>
+<ul>
+    {% for task in tasks %}  
+    <li>
+        <a href="{% url 'task_detail' task.id %}">{{ task.title }}</a>  
+    </li>
+    {% endfor %}
+</ul>
+
+<h1><a href="{% url 'addtask' %}">+ Agregar tarea</a></h1>
+
+{% endblock %}

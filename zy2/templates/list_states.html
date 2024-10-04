@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>List of States</h1>
+<ul>
+
+{% for state in states %}
+    <li>
+    {{ state.name }} - Country: {{ state.country.name }}  
+    <a href="{% url 'update_states' state.id %}">Edit</a>
+    </li>
+{% empty %}
+    <li>No states have been added yet.</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'add_state' %}">Add a new state</a>
+
+{% endblock %}

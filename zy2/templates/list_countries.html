@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>List of Countries</h1>
+<ul>
+{% for country in countries %}
+    <li>
+    {{ country.name }}
+    <ul>
+        {% for state in country.state_set.all %}
+        <li>{{ state.name }}</li>  <!-- Mostrar los estados que pertenecen al país -->
+        {% empty %}
+        <li>No states for this country yet.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'update_country' country.id %}">Edit</a>
+    </li>
+{% empty %}
+    <li>No countries have been added yet.</li>
+{% endfor %}
+</ul>
+<a href="{% url 'add_country' %}">Add a new country</a>
+
+{% endblock %}
